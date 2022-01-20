@@ -1,9 +1,9 @@
 
-# MyAwesomeProject
+# My Awesome Project
 ## Licenses
- Mozilla, MIT
+ [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)  [![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)  [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)  [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 ## Description
-This is basically the project that I made and its awesome
+This is a description for My Awesome Project
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -13,18 +13,18 @@ This is basically the project that I made and its awesome
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
-You basically just install it
+You install it by doing bla bla bla.
 ## Usage
-You basically just ues it 
+You use it by doing bla bla bla.
 <br />
 ## Contributing
-You basically just contribute to it
+You can contribute by doing bla bla bla.
 ## Tests
-You basically just test it
+You test it by doing bla bla bla.
 ## Questions
+Contact me if you have any questions at the links below:
+<br />
 
-Find me on GitHub: [fakeGithub](https://github.com/fakeGithub).  
+My GitHub: [fakeGithub](https://github.com/fakeGithub).  
 
-Email me with any questions: fake@gmail.com.  
-
-This README was generated with  by [README-generator](https://github.com/nguyen-william93/README-generator)
+My email: fake@gmail.com.  
