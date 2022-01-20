@@ -62,7 +62,7 @@ function createBadges(item) {
     if (item === "Apache") badgeArr.push(` [![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)`)
     if (item === "MIT") badgeArr.push(` [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)`)
     if (item === "Boost") badgeArr.push(` [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`)
-    if (item === "None") badgeArr.push("")
+    if (item === "None") badgeArr.push("None")
 }
 
 function askQuestions() {
