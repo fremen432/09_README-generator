@@ -10,57 +10,68 @@ const { Intern, internQuestionsArr } = require('./lib/Intern');
 const employeesArr = []
 
 const init = () => { managerQuestions() }
-// prompts manager questions then creates object from user inputs based on Manager class 
-const managerQuestions = () => {
-    inquirer.prompt(managerQuestionsArr)
-    .then(( answers ) => {
-        answers = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-        employeesArr.push(answers);
-        return employeePrompt();
-    })
-}
-// prompts engineer questions then creates object from user inputs based on Engineer class 
-const engineerQuestions = () => {
-    inquirer.prompt(engineerQuestionsArr)
-    .then(( answers ) => {
-        answers = new Engineer(answers.name, answers.id, answers.email, answers.github)
-        employeesArr.push(answers);
-        return employeePrompt();
-    })
-}
-// prompts intern questions then creates object from user inputs based on Intern class 
-const internQuestions = () => {
-    inquirer.prompt(internQuestionsArr)
-    .then(( answers ) => {
-        answers = new Intern(answers.name, answers.id, answers.email, answers.school)
-        employeesArr.push(answers);
-        return employeePrompt();
-    })
-}
-// handles prompts
-const employeePrompt = () => {
-    inquirer.prompt([{
-        type: 'list',
-        name: 'employeeType',
-        message: "What kind of team member would you like to add?",
-        choices: [
-            {name: 'Engineer', value: "addEngineer"},
-            {name: 'Intern', value: "addIntern"},
-            {name: 'DONE', value: "done"}
-        ]
-    }])
-    .then( answer => {
-        // sends correct prompts based on the employee type
-        if (answer.employeeType === 'addEngineer') { engineerQuestions(); };
-        if (answer.employeeType === 'addIntern') { internQuestions(); };
-        if (answer.employeeType === 'done') {
-            // converts users inputs into HTML
-            let html = template(employeesArr)
-            console.log('...');
-            // creates HTML file
-            writeFile(html);
+
+const questions = [
+    {
+        type: "input",
+        name: "title",
+        message: "What is the title of your project?",
+        validate: titleInput => {
+            if (titleInput){
+                return true;
+            } else {
+                return false;
+            }
         }
-    })
-}
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "Description about your project",
+        validate: descriptionInput => {
+            if(descriptionInput){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "Provide instruction on how to install your project",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Provide any usage information",
+    },
+    {
+        type: "input",
+        name: "contribution",
+        message: "Provide any contribution guidlines.",
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "Provide any test instruction",
+    },
+    {
+        type : "checkbox",
+        name: "license",
+        message: "Choose your license.",
+        choices: ["GNU", "Mozilla", "Apache", "MIT", "Boost", "Unlicense", "None"]
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "Provide your github username"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Provide your professional email",
+    }
+];
 
 init();
