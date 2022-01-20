@@ -69,7 +69,7 @@ const questions = [
     }
 ];
 
-const licenses = [
+const licensesArr = [
     {
         name: "Mozilla",
         badge: `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
@@ -139,6 +139,7 @@ function renderLicenseBadge(license) {
 function createTemplate(res) {
     // console.log(res.title);
 
+
     return `
     ## ${res.title}
     ${renderLicenseBadge(res.license)}(${renderLicenseLink(res.license)})
@@ -188,5 +189,9 @@ function createMDFile(fileName, data) {
     })
 }
 
+function test() {
+    console.log(licensesArr[2]);
+}
 
-init();
+test();
+// init();
