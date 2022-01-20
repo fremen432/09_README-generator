@@ -5,14 +5,14 @@
 
 <h1 align="center">
     <a>
-    <!-- <a href="https://www.youtube.com/watch?v=MmCSwY2uNWg" target="_blank"> -->
+    <a href="https://youtu.be/-yhBsGr08rw" target="_blank">
      View Walkthrough Video
     </a>
 </h1>
 
 
 <div align="center">
-    <!-- <img src="./assets/walkthrough.gif" width="600px"> -->
+    <img src="./assets/video2.gif" width="600px">
     
 </div>
 
