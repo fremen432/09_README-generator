@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: .5rem;
+    /* color: white; */
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.box { border: 1px solid black; }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: #f5f4f7;
+}
+
+.bg-color-1 { background-color: #F8B195; }
+.bg-color-2 { background-color: #F67280; }
+.bg-color-3 { background-color: #C06C84; }
+.bg-color-4 { background-color: #6C5B7B; }
+.bg-color-5 { background-color: #355C7D; }
+
+.name-role {
+    display: flex;
+    justify-content: space-around;
+}
+
+.my-team { background-color: #b29ef7; }
+
+.manager-name { background-color: #ff3535; }
+
+.engineer-name { background-color: #95ff95; }
+
+.intern-name { background-color: #fff388; }
+
+.employee-info { background-color: #f5f4f7; }
+
+.card { background-color: #355C7D; }
