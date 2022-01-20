@@ -16,17 +16,17 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Please give a description of your project",
+        message: "Please give a description of your project.",
     },
     {
         type: "input",
         name: "installation",
-        message: "Please provide instruction on how to install your project",
+        message: "Please provide instruction on how to install your project.",
     },
     {
         type: "input",
         name: "usage",
-        message: "Please provide information of how to use your project",
+        message: "Please provide information of how to use your project.",
     },
     {
         type: "input",
@@ -41,21 +41,22 @@ const questions = [
     {
         type : "checkbox",
         name: "license",
-        message: "Choose your license.",
+        message: "Please choose any licenses your project uses.",
         choices: ["Mozilla", "Apache", "MIT", "Boost", "None"]
     },
     {
         type: "input",
         name: "github",
-        message: "What is your github username"
+        message: "What is your github username?"
     },
     {
         type: "input",
         name: "email",
-        message: "Provide your professional email",
+        message: "What is your email address?",
     }
 ];
 
+// generates the appropriate badge based off users choices
 function createBadges(item) {
     if (item === "Mozilla") badgeArr.push(` [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`)
     if (item === "Apache") badgeArr.push(` [![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)`)
@@ -65,17 +66,21 @@ function createBadges(item) {
 }
 
 function askQuestions() {
-    badgeArr.length = 0
+    // clears badgeArr
+    badgeArr.length = 0;
     // Asks questions from questions array
     inquirer.prompt(questions)
     .then(response => { 
+        // calls createBadge function
         let license = response.license
         license.forEach(createBadges);
+        // generates README file in print folder
         const readMe = createTemplate(response)
         createMDFile(fileLocation, readMe)
     })
 };
 
+// README.md template. takes in user inputs
 function createTemplate(res) {
 return `
 # ${res.title}
@@ -110,6 +115,7 @@ My email: ${res.email}.
 `;
 }
 
+// writes README template data to a .md file 
 function createMDFile(fileName, data) {
     fs.writeFile (fileName, data, err => {
         if (err){
