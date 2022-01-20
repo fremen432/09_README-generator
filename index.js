@@ -64,38 +64,19 @@ function createBadges(item) {
     if (item === "None") badgeArr.push("")
 }
 
-
-const dummyAnswers = {
-    title: 'My Awesome Project',
-    description: 'This is a description for My Awesome Project',
-    installation: 'You install it by doing bla bla bla.',
-    usage: 'You use it by doing bla bla bla.',
-    contribution: 'You can contribute by doing bla bla bla.',
-    test: 'You test it by doing bla bla bla.',
-    license: ["Mozilla", "Apache", "MIT", "Boost"],
-    github: 'fakeGithub',
-    email: 'fake@gmail.com'
-  }
-
 function askQuestions() {
-    // badgeArr.length = 0
+    badgeArr.length = 0
     // Asks questions from questions array
-    // inquirer.prompt(questions)
-    // .then(response => { 
-    //     let license = response.license
-    //     license.forEach(createBadges);
-    //     const readMe = createTemplate(response)
-    //     createMDFile(fileLocation, readMe)
-    // })
-
-    let license = dummyAnswers.license
-    license.forEach(createBadges);
-    const readMe = createTemplate(dummyAnswers)
-    createMDFile(fileLocation, readMe)
+    inquirer.prompt(questions)
+    .then(response => { 
+        let license = response.license
+        license.forEach(createBadges);
+        const readMe = createTemplate(response)
+        createMDFile(fileLocation, readMe)
+    })
 };
 
 function createTemplate(res) {
-    
 return `
 # ${res.title}
 ## Licenses
@@ -136,10 +117,6 @@ function createMDFile(fileName, data) {
         }
         console.log("README.md successfully created !!")
     })
-}
-
-function test() {
-    console.log(licensesArr[2]);
 }
 
 init();
